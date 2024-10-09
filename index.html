@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camelback Coffee</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="main" href="main.js">
-    <script></script><!--Link JS-->
+    
 </head>
-<body>
+<body>  
     <header>
         <h1>Camelback Coffee</h1>
         <nav>
@@ -20,10 +19,12 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <h2>Welcome Friends</h2>
         <p>Camelback Coffee is committed to offer premium coffee that embodies the beauty of the city it calls home. Serving locals, snow birds, and visitors alike, we strive to deliver quality service to all. Below you will find our selection of products, a chance to win a free coffee subscription, and a form  to join our monthly newsletter. See you on the trail!</p>
         
+        <!--Products-->
         <section class="products" id="products">
             <!-- Product Selection-->
             <div></div>
@@ -32,24 +33,72 @@
             <p></p>
         </section>
 
+        <!--Enter # Game-->
         <section class="game">
             <h2>Win Coffee for a Year!</h2>
             <p>Guess how many beans are in this jar to win a monthly coffee bean bag subscription for a year!</p>
+            
             <!--User entered amount-->
-            <h3>Enter Guess</h3> 
+            <h3>Enter Guess</h3>
+            <form id="guessForm">
+                <input type="number" id="userGuess" min="1" max="10,000">
+                <button type="submit">Submit</button>
+                <span class="error" id="guessError"></span>
+            </form>
+            
             <img href="images/Coffeebeans.jpg"alt="Jar of coffee beans">
+            
             <!--Does it make random number generated?-->
             <h3>Did you win?</h3>
+            <span class="error"  id="resultMessage"></span>
         </section>
-       
-        <section class="contactForm" id="contact">
+
+       <!--Contact Form-->
+        <section class="contact" id="contact">
             <h2>Say Hello!</h2>
             <p>Join our monthly newsletter to learn about new blends and hiking trends</p>
             <!--Form-->
+            <form id="contactForm">
+                <div>
+                    <label>Full Name:</label>
+                    <input type ="text" id="fullName" name="fullName">
+                    <span class="error" id="fullNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Method of Contact:</label>
+                    <div class="radio-group">
+                      <input type="radio" id="contactPhone" name="contactMethod" value="phone">
+                      <label for="contactPhone">Phone Number:</label>
+                      <div>
+                        <label for="phone"></label>
+                        <input type="text" id="phone" name="phone" placeholder="Optional if choosing email">
+                        <span class="error" id="phoneError"></span>
+                      </div>
+                      <input type="radio" id="contactEmail" name="contactMethod" value="email">
+                      <label for="contactEmail">Email Address:</label>
+                      <div class>
+                        <label for="email"></label>
+                        <input type="text" id="email" name="email" placeholder="Optional if choosing phone">
+                        <span class="error" id="emailError"></span>
+                      </div>
+                    </div>
+                    <span class="error" id="contactMethodError"></span>
+                  </div>
+                  <div>
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                    <span class="error" id="commentsError"></span>
+                  </div>
+                  <button type="submit">Submit</button>
+            </form>
+            <div class="thank-you-message" id="thankYouMessage"></div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 GIT 417 Lauren Auer. All rights reserved.</p>
     </footer>
+
+    <script src="scripts.js"></script>  
 </body>
 </html>
