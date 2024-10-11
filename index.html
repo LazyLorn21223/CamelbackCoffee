@@ -10,27 +10,42 @@
 </head>
 <body>  
     <header>
-        <h1>Camelback Coffee</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
+        <div>
+            <h1>Camelback Coffee</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="toggle-btn" id="modeToggleBtn">Switch to Dark Mode</button>
+            </nav>
+        </div>
         <h2>Welcome Friends</h2>
         <p>Camelback Coffee is committed to offer premium coffee that embodies the beauty of the city it calls home. Serving locals, snow birds, and visitors alike, we strive to deliver quality service to all. Below you will find our selection of products, a chance to win a free coffee subscription, and a form  to join our monthly newsletter. See you on the trail!</p>
-        
+
+    </header>
+
+    <main>        
         <!--Products-->
         <section class="products" id="products">
             <!-- Product Selection-->
-            <div></div>
+            <div class="productControls">
+                <button onclick="showProduct(0)">Light Roast</button>
+                <button onclick="showProduct(1)">Med Roast</button>
+                <button onclick="showProduct(2)">Dark Roast</button>
+                <button onclick="showProduct(3)">Canyon Blend</button>
+                <button onclick="showProduct(4)">Saguaro Blend</button>
+              </div>
+            
             <!-- Product Img and P-->
-            <img href="images/AZlandscape.jpg" alt="Desert Landscape">
-            <p></p>
+            <div id="productDisplay">
+                <h3 id="productName">Sunset Light Roast</h3>
+                <div id="productFlex">
+                    <img id="productImage" src="images/product1.jpg" alt="Product Image">
+                    <p id="productDescription"></p>
+                </div>
+              </div>
         </section>
 
         <!--Enter # Game-->
@@ -46,7 +61,7 @@
                 <span class="error" id="guessError"></span>
             </form>
             
-            <img href="images/Coffeebeans.jpg"alt="Jar of coffee beans">
+            <img src="images/Coffeebeans.jpg"alt="Jar of coffee beans">
             
             <!--Does it make random number generated?-->
             <h3>Did you win?</h3>
@@ -65,7 +80,7 @@
                     <span class="error" id="fullNameError"></span>
                 </div>
                 <div class="form-group">
-                    <label>Preferred Method of Contact:</label>
+                    <label><h3>Preferred Method of Contact:</h3></label>
                     <div class="radio-group">
                       <input type="radio" id="contactPhone" name="contactMethod" value="phone">
                       <label for="contactPhone">Phone Number:</label>
@@ -99,6 +114,6 @@
         <p>&copy; 2024 GIT 417 Lauren Auer. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>  
+    <script src="scripts.js" defer></script>  
 </body>
 </html>

@@ -1,4 +1,67 @@
+"use strict";
+
+// Light/Dark Mode
+document.getElementById('modeToggleBtn').addEventListener('click', toggleMode);
+const toggleBtn = document.getElementById('modeToggleBtn');
+  const body = document.body;
+
+    // Function to toggle between light and dark modes
+    function toggleMode() {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        toggleBtn.innerText = 'Switch to Dark Mode';
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        toggleBtn.innerText = 'Switch to Light Mode';
+      }
+    }
+
 //Product
+const products = [
+  {
+    name: "Sunset Light Roast",
+    image: "images/product1.jpg",
+    description: "Sunset Light Roast Coffee Beans offer a bright and refreshing brew with delicate flavors and a smooth finish. Sourced from premium coffee-growing regions, these beans are lightly roasted to preserve their natural citrus and floral notes, creating a lively and aromatic cup. Ideal for those who enjoy a milder coffee experience, the light roast highlights subtle sweetness and acidity, making it perfect for morning sips or afternoon pick-me-ups. With a golden hue and a crisp, clean taste, Sunset Light Roast Coffee Beans deliver a gentle yet invigorating coffee experience for any time of day."
+  },
+  {
+    name: "Piestewa Medium Roast",
+    image: "images/product2.jpg",
+    description: "Piestewa Medium Roast Coffee Beans offer a balanced and rich flavor profile, perfect for those who enjoy a smooth and satisfying cup. Named after Piestewa Peak, these beans are carefully roasted to a medium level, bringing out deep chocolatey undertones with hints of nutty sweetness. The medium roast strikes the perfect balance between boldness and subtlety, delivering a full-bodied taste without overwhelming bitterness. Ideal for any time of day, Piestewa Medium Roast Coffee Beans provide a harmonious blend of flavor and aroma, capturing the warmth and rugged beauty of the desert landscape."
+  },
+  {
+    name: "Superstition Dark Roast",
+    image: "images/product3.jpg",
+    description: "Superstition Dark Roast Coffee Beans deliver a bold and intense flavor experience, perfect for those who love a strong, robust cup. Inspired by the rugged Superstition Mountains, these beans are expertly roasted to a deep, dark finish, bringing out rich smoky notes with a touch of dark chocolate and a hint of caramelized sweetness. The full-bodied, velvety texture offers a powerful yet smooth coffee experience, with a lingering, satisfying finish. Superstition Dark Roast is perfect for those seeking a deep, complex flavor that evokes the mystery and strength of the desert wilderness. Ideal for strong coffee lovers."
+  },
+  {
+    name: "Canyon Blend",
+    image: "images/product4.jpg",
+    description: "Canyon Blend Coffee Beans offer a smooth and versatile brew, combining beans from different regions to create a well-rounded flavor profile. With a medium roast, Canyon Blend strikes the perfect harmony between bright acidity and rich depth, featuring notes of caramel, toasted nuts, and a hint of fruit. This blend is crafted to evoke the grandeur and beauty of canyons, delivering a balanced cup with a warm, inviting aroma. Perfect for any time of day, Canyon Blend is ideal for those who appreciate a smooth, approachable coffee with layered complexity and a satisfying, lasting finish."
+  },
+  {
+    name: "Saguaro Blend",
+    image: "images/product5.jpg",
+    description: "Saguaro Blend Coffee Beans offer a distinctive and flavorful brew inspired by the iconic desert landscape. This medium-dark roast blend combines beans from select regions, creating a robust yet smooth coffee with earthy undertones and subtle hints of dark chocolate and spice. The Saguaro Blend is rich and bold, with a full-bodied texture and a slightly smoky finish, capturing the resilience and beauty of the towering saguaro cacti. Perfect for coffee lovers who appreciate a hearty, flavorful cup that remains balanced and easy to enjoy, Saguaro Blend is ideal for any time of day."
+  }
+];
+
+// Function to display the chosen product
+function showProduct(index) {
+  const productName = document.getElementById('productName');
+  const productImage = document.getElementById('productImage');
+  const productDescription = document.getElementById('productDescription');
+
+  productName.innerText = products[index].name;
+  productImage.src = products[index].image;
+  productImage.alt = products[index].name;
+  productDescription.innerText = products[index].description;
+}
+
+window.onload = function() {
+  showProduct(0);
+};
 
 //Game 
 document.getElementById('guessForm').addEventListener('submit', function (e) {

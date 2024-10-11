@@ -1,26 +1,245 @@
 html {
-    width: 1280px;
-    margin: 0 auto;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #8d6e63;
 }
 
-body{
-
+body {
+  width: 1100px;
+  margin: 0 auto;
+  background-color: #f4e4c1; 
+  color: #3e2723; 
+  font-family: 'Arial', sans-serif; 
+  line-height: 1.6;
 }
 
-header{
-
+body.light-mode {
+  background-color: #f4e4c1;
+  color: #3e2723;
 }
 
-main{
-
+body.dark-mode {
+  background-color: #2b0d33;
+  color: #eeecdc;
+}
+body.dark-mode .game{
+  background-color: #9d4807;
+}
+body.dark-mode .contact {
+  background-color: #602462;
 }
 
-section{
-
+/* Header styling*/
+header {
+  background-image: url('images/AZlandscape.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  color: #f4e4c1;
+  text-shadow: 2px 2px #3e2723;
 }
 
-footer{
 
+header div {
+  background-color: rgba(60, 50, 41, 0.6);
+  padding: 20px;
+  border-radius: 8px; 
+}
+
+/* Navigation styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f4e4c1;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff8a65; 
 }
 
 
+.toggle-btn {
+  padding: 10px 20px;
+  background-color: #9d4807;
+  color: #f4e4c1; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #d84315;
+}
+
+/* Main section styling */
+main {
+  padding: 40px 0;
+}
+
+/* Product section */
+section.products {
+  margin-bottom: 40px;
+}
+
+.productControls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px; 
+  background-color: rgba(60, 50, 41, 0.6);
+  margin:0 100px;
+}
+
+.productControls button {
+  background-color: #c67c48;
+  color: #f4e4c1;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight:bold;
+}
+
+.productControls button:hover {
+  background-color: #a0522d; 
+}
+
+#productDisplay {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#productName {
+  font-size: 48px;
+  font-weight: bold;
+  color: #8d6e63;
+  text-shadow: 2px 1px #3e2723db;
+  text-decoration: underline;
+}
+
+#productFlex{
+  display:flex;
+  padding: 20px;
+}
+#productImage, #productDescription {
+  flex:1;
+}
+#productImage {
+  width: 300px;
+  border: 3px solid #9d4807;
+  border-radius: 8px;
+}
+
+#productDescription{
+  padding: 20px;
+}
+
+/* Game section */
+section.game {
+  background-color: #ffcc80;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+section.game img {
+  margin-top: 20px;
+  width: 600px;
+  border-radius: 8px;
+  border: 2px solid #9d4807; 
+}
+section.game button {
+  width:8%;
+  background-color: #602462;
+  color: #f4e4c1;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline;
+}
+
+section.game button:hover {
+  background-color: #ff8a65;
+}
+
+/* Contact form section */
+section.contact {
+  background-color: #ffebee; 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+section.contact h2 {
+  color: #ff5722; 
+  text-align: center;
+}
+section.contact p{
+  text-align: center;
+}
+#contactPhone, #contactEmail{
+  width:10px;
+}
+
+
+section.contact input, section.contact textarea {
+  width: 98%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #9d4807;
+  border-radius: 5px;
+}
+
+section.contact button {
+  width:100%;
+  background-color: #9d4807;
+  color: #f4e4c1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section.contact button:hover {
+  background-color: #ff8a65;
+}
+
+/* Footer styling */
+footer {
+  background-color: #3e2723;
+  color: #f4e4c1;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #9d4807;
+}
+
+footer p {
+  margin: 0;
+}
