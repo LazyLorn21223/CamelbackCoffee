@@ -1,7 +1,6 @@
 "use strict";
 
 // Light/Dark Mode
-document.getElementById('modeToggleBtn').addEventListener('click', toggleMode);
 const toggleBtn = document.getElementById('modeToggleBtn');
   const body = document.body;
 
@@ -18,7 +17,21 @@ const toggleBtn = document.getElementById('modeToggleBtn');
       }
     }
 
+
 //Product
+
+// Product buttons
+const btnLightRoast = document.getElementById('btnLightRoast');
+const btnMedRoast = document.getElementById('btnMedRoast');
+const btnDarkRoast = document.getElementById('btnDarkRoast');
+const btnCanyonBlend = document.getElementById('btnCanyonBlend');
+const btnSaguaroBlend = document.getElementById('btnSaguaroBlend');
+
+// Product display elements, images found on https://unsplash.com
+const productName = document.getElementById('productName');
+const productImage = document.getElementById('productImage');
+const productDescription = document.getElementById('productDescription');
+
 const products = [
   {
     name: "Sunset Light Roast",
@@ -47,16 +60,11 @@ const products = [
   }
 ];
 
-// Function to display the chosen product
+// Function to show product
 function showProduct(index) {
-  const productName = document.getElementById('productName');
-  const productImage = document.getElementById('productImage');
-  const productDescription = document.getElementById('productDescription');
-
-  productName.innerText = products[index].name;
+  productName.textContent = products[index].name;
   productImage.src = products[index].image;
-  productImage.alt = products[index].name;
-  productDescription.innerText = products[index].description;
+  productDescription.textContent = products[index].description;
 }
 
 window.onload = function() {
@@ -64,7 +72,7 @@ window.onload = function() {
 };
 
 //Game 
-document.getElementById('guessForm').addEventListener('submit', function (e) {
+  function beanGame(e) {
     e.preventDefault();
     
     const userGuess = parseInt(document.getElementById('userGuess').value.trim());
@@ -94,10 +102,10 @@ document.getElementById('guessForm').addEventListener('submit', function (e) {
       resultMessage.className = 'message try-again';
     }
     resultMessage.style.display = 'block';
-  });
+  };
 
 // Contact Form JS
-document.getElementById('contactForm').addEventListener('submit', function (e) {
+function handleContactFormSubmit(e) {
     e.preventDefault();
     let valid = true;
 
@@ -149,4 +157,14 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         Your comments: "${customer.comments}".`;
       thankYouMessage.style.display = 'block';
     }
-  });
+  };
+
+//Event Listeners
+btnLightRoast.addEventListener('click', () => showProduct(0));
+btnMedRoast.addEventListener('click', () => showProduct(1));
+btnDarkRoast.addEventListener('click', () => showProduct(2));
+btnCanyonBlend.addEventListener('click', () => showProduct(3));
+btnSaguaroBlend.addEventListener('click', () => showProduct(4));
+document.getElementById('modeToggleBtn').addEventListener('click', toggleMode);
+document.getElementById('guessForm').addEventListener('submit', beanGame);
+document.getElementById('contactForm').addEventListener('submit', handleContactFormSubmit);

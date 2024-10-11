@@ -31,11 +31,11 @@
         <section class="products" id="products">
             <!-- Product Selection-->
             <div class="productControls">
-                <button onclick="showProduct(0)">Light Roast</button>
-                <button onclick="showProduct(1)">Med Roast</button>
-                <button onclick="showProduct(2)">Dark Roast</button>
-                <button onclick="showProduct(3)">Canyon Blend</button>
-                <button onclick="showProduct(4)">Saguaro Blend</button>
+                <button id="btnLightRoast">Light Roast</button>
+                <button id="btnMedRoast">Med Roast</button>
+                <button id="btnDarkRoast">Dark Roast</button>
+                <button id="btnCanyonBlend">Canyon Blend</button>
+                <button id="btnSaguaroBlend">Saguaro Blend</button>
               </div>
             
             <!-- Product Img and P-->
@@ -54,8 +54,9 @@
             <p>Guess how many beans are in this jar to win a monthly coffee bean bag subscription for a year!</p>
             
             <!--User entered amount-->
-            <h3>Enter Guess</h3>
+            
             <form id="guessForm">
+                <label for="userGuess"><h3>Enter Guess</h3></label>
                 <input type="number" id="userGuess" min="1" max="1,000">
                 <button type="submit">Submit</button>
                 <span class="error" id="guessError"></span>
@@ -75,12 +76,12 @@
             <!--Form-->
             <form id="contactForm">
                 <div>
-                    <label>Full Name:</label>
+                    <label for="fullName">Full Name:</label>
                     <input type ="text" id="fullName" name="fullName">
                     <span class="error" id="fullNameError"></span>
                 </div>
                 <div class="form-group">
-                    <label><h3>Preferred Method of Contact:</h3></label>
+                    <h3>Preferred Method of Contact:</h3>
                     <div class="radio-group">
                       <input type="radio" id="contactPhone" name="contactMethod" value="phone">
                       <label for="contactPhone">Phone Number:</label>
